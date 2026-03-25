@@ -34,7 +34,7 @@ n=0:1:N-1;
 hd=(sin(pi*(n-alpha+eps))-sin((n-alpha+eps)*wc1)+sin((n-alpha+eps)*wc2))./(pi*(n-alpha+eps)) 
 %Hamming Window Sequence
 n=0:1:N-1;
-wh=0.54-0.46*cos((2*pi*n)/(N-1))
+wh=0.5-0.5*cos((2*pi*n)/(N-1))
 hn=hd.*wh
 % Plot the Low Pass Filter with Hamming Window Technique
 w=0:0.01:pi;
@@ -44,7 +44,7 @@ plot(w/pi,abs(h),'blue');
 ~~~
 ## OUTPUT:
 
-<img width="1614" height="856" alt="image" src="https://github.com/user-attachments/assets/f796ea72-30f3-4c95-bd9f-cebc677dc18b" />
+<img width="1629" height="868" alt="image" src="https://github.com/user-attachments/assets/2ab16866-e38f-489d-9777-b3ee79cea5f0" />
 
 ## RESULT:
 
