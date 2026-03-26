@@ -36,7 +36,7 @@ hd=(sin(pi*(n-alpha+eps))-sin((n-alpha+eps)*wc1)+sin((n-alpha+eps)*wc2))./(pi*(n
 n=0:1:N-1;
 wh=0.5-0.5*cos((2*pi*n)/(N-1))
 hn=hd.*wh
-% Plot the Low Pass Filter with Hanning Window Technique
+% Plot the Band stop Filter with Hanning Window Technique
 w=0:0.01:pi;
 h=freqz(hn,1,w);
 plot(w/pi,abs(h),'blue');
