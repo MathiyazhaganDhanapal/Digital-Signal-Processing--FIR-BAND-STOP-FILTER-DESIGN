@@ -48,5 +48,5 @@ plot(w/pi,abs(h),'blue');
 
 ## RESULT:
 
-Thus the design of Band pass FIR digital filter using Hanning waveforms were plotted and 
+Thus the design of Band stop FIR digital filter using Hanning waveforms were plotted and 
 output was verified. 
