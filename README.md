@@ -21,30 +21,42 @@ Step 6: Terminate the program.
 ## PROGRAM: 
 ~~~
 
-clc; % clear screen
-clear all; % clear screen
-close all; % close all figure windows
-wc1=input('enter the value of wc1');
-wc2=input('enter the value of wc2');
-N=input('enter the value of filter');
-alpha=(N-1)/2;
-eps=0.001;
-%Band Stop Filter Coefficient 
-n=0:1:N-1;
-hd=(sin(pi*(n-alpha+eps))-sin((n-alpha+eps)*wc1)+sin((n-alpha+eps)*wc2))./(pi*(n-alpha+eps)) 
-%Hanning Window Sequence
-n=0:1:N-1;
-wh=0.5-0.5*cos((2*pi*n)/(N-1))
-hn=hd.*wh
-% Plot the Band stop Filter with Hanning Window Technique
-w=0:0.01:pi;
-h=freqz(hn,1,w);
-plot(w/pi,abs(h),'blue');
+clc; % clear screen 
+clear all; % clear workspace 
+close all; % close all figure windows 
+
+Wc1=input('enter the value of Wc1=');  
+Wc2=input('enter the value of Wc2=');  
+N=input('enter the value of N='); 
+
+alpha=(N-1)/2;  
+eps=0.001;  
+
+% Band stop Filter Coefficient 
+n=0:1:N-1;  
+hd=(sin(pi*(n-alpha+eps)) - sin((n-alpha+eps)*Wc2) + sin((n-alpha+eps)*Wc1))./(pi*(n-alpha+eps));
+
+% Bartlett Window Sequence  
+n=0:1:N-1;  
+wh=1 - 2*abs(n-alpha)/(N-1);  
+
+% Final impulse response
+hn=hd.*wh;  
+
+% Plot the Band stop Filter with Bartlett Window Technique 
+w=0:0.01:pi;  
+h=freqz(hn,1,w); 
+
+plot(w/pi,abs(h),'b');
+xlabel('Normalized Frequency');
+ylabel('Magnitude');
+title('Band Stop FIR Filter using Bartlett Window');
+grid on;
 
 ~~~
 ## OUTPUT:
 
-<img width="1629" height="868" alt="image" src="https://github.com/user-attachments/assets/2ab16866-e38f-489d-9777-b3ee79cea5f0" />
+<img width="1630" height="886" alt="Screenshot 2026-03-29 101013" src="https://github.com/user-attachments/assets/2e0b3b26-cf2d-4654-9192-b5f5e5b12678" />
 
 ## RESULT:
 
