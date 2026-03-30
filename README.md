@@ -60,5 +60,4 @@ grid on;
 
 ## RESULT:
 
-Thus the design of Band stop FIR digital filter using Hanning waveforms were plotted and 
-output was verified. 
+![WhatsApp Image 2026-03-30 at 2 21 22 PM (4)](https://github.com/user-attachments/assets/7a0eed64-8893-4917-afa0-8b019174a415)
